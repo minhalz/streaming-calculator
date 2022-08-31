@@ -60,4 +60,8 @@ export default defineNuxtConfig({
             },
         },
     },
+
+    image: {
+        domains: ['drive.google.com'],
+    },
 })

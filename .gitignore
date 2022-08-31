@@ -92,3 +92,5 @@ sw.*
 
 # Nitro output
 .output
+# Local Netlify folder
+.netlify

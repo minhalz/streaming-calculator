@@ -33,10 +33,11 @@ export default defineNuxtConfig({
         // https://go.nuxtjs.dev/eslint
         '@nuxtjs/eslint-module',
         '@nuxt/postcss8',
+        '@nuxt/image',
     ],
 
     // Modules: https://go.nuxtjs.dev/config-modules
-    modules: ['@pinia/nuxt', '@nuxt/image'],
+    modules: ['@pinia/nuxt'],
 
     // Build Configuration: https://go.nuxtjs.dev/config-build
     build: {

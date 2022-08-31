@@ -36,10 +36,6 @@ export default defineNuxtConfig({
         '@nuxt/image',
     ],
 
-    image: {
-        domains: ['drive.google.com'],
-    },
-
     // Modules: https://go.nuxtjs.dev/config-modules
     modules: ['@pinia/nuxt'],
 

@@ -1,4 +1,4 @@
-import { defineNuxtConfig } from '@nuxt/bridge'
+import { defineNuxtConfig } from 'nuxt'
 
 export default defineNuxtConfig({
     // Target: https://go.nuxtjs.dev/config-target
@@ -19,38 +19,17 @@ export default defineNuxtConfig({
         link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     },
 
-    // Global CSS: https://go.nuxtjs.dev/config-css
-    css: ['@/assets/scss/main.scss'],
-
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
     plugins: [],
 
     // Auto import components: https://go.nuxtjs.dev/config-components
     components: true,
 
-    // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-    buildModules: [
-        // https://go.nuxtjs.dev/eslint
-        '@nuxtjs/eslint-module',
-        '@nuxt/postcss8',
-        '@nuxt/image',
-    ],
-
     // Modules: https://go.nuxtjs.dev/config-modules
-    modules: ['@pinia/nuxt'],
+    modules: ['@nuxt/image-edge', '@nuxtjs/tailwindcss', '@pinia/nuxt'],
 
-    // Build Configuration: https://go.nuxtjs.dev/config-build
-    build: {
-        postcss: {
-            plugins: {
-                tailwindcss: {},
-                autoprefixer: {},
-            },
-        },
-    },
-
-    bridge: {
-        vite: true,
+    tailwindcss: {
+        cssPath: '@/assets/scss/main.scss',
     },
 
     vite: {

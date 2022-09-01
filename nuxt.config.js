@@ -5,7 +5,7 @@ export default defineNuxtConfig({
     target: 'static',
 
     // Global page headers: https://go.nuxtjs.dev/config-head
-    head: {
+    meta: {
         title: 'Streaming Services Calculator',
         htmlAttrs: {
             lang: 'en',
@@ -13,7 +13,12 @@ export default defineNuxtConfig({
         meta: [
             { charset: 'utf-8' },
             { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-            { hid: 'description', name: 'description', content: '' },
+            {
+                hid: 'description',
+                name: 'description',
+                content:
+                    "Select all your current streaming services to find out how much you're spending monthly and yearly.",
+            },
             { name: 'format-detection', content: 'telephone=no' },
         ],
         link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],

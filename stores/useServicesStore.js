@@ -1,38 +1,39 @@
 import { defineStore } from 'pinia'
 
 const useServicesStore = defineStore('services', () => {
-    const services = ref([])
+    const services = reactive([])
+
+    const cost = computed(() => {
+        return services.reduce((acc, current) => acc + current.cost, 0)
+    })
 
     const monthlyCost = computed(() => {
-        return services.value.reduce((acc, current) => acc + current.cost, 0).toFixed(2)
+        return cost.value.toFixed(2)
     })
 
     const yearlyCost = computed(() => {
-        return (services.value.reduce((acc, current) => acc + current.cost, 0) * 12).toFixed(2)
+        return (cost.value * 12).toFixed(2)
     })
 
     function addItem(id, cost) {
-        services.value.push({
+        services.push({
             id,
             cost,
         })
     }
 
+    function getIndex(id) {
+        return services.findIndex((service) => service.id === id)
+    }
+
     function removeItem(id) {
-        const newServices = services.value.filter((service) => service.id !== id)
-        services.value = newServices
+        const removeIndex = getIndex(id)
+        services.splice(removeIndex, 1)
     }
 
     function updateItem(id, cost) {
-        const newServices = services.value.map((service) => {
-            if (service.id === id) {
-                service.cost = cost
-                return service
-            }
-            return service
-        })
-
-        services.value = newServices
+        const updateIndex = getIndex(id)
+        services[updateIndex].cost = cost
     }
 
     return { services, monthlyCost, yearlyCost, addItem, removeItem, updateItem }

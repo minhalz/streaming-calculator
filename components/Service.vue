@@ -17,9 +17,9 @@ function toggleState() {
 }
 
 function updateService(newAmount) {
+    amount.value = newAmount
     if (selected.value) {
         services.updateItem(id, newAmount)
-        amount.value = newAmount
     } else {
         toggleState()
     }

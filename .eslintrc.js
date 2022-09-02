@@ -26,8 +26,10 @@ module.exports = {
     globals: {
         _: true,
         defineProps: false,
+        defineEmits: false,
         ref: false,
         reactive: false,
         computed: false,
+        watch: false,
     },
 }
